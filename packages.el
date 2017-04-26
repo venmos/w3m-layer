@@ -61,26 +61,21 @@
 (defun w3m/init-w3m()
   "Initializes w3m and adds keybindings for its exposed functionalities."
   (use-package w3m
-    :commands (v/w3m-open-site
-               w3m-goto-url
-               w3m-goto-url-new-session
-               w3m-search
-               w3m-search-new-session
-               w3m-delete-buffer
-               w3m-next-buffer
-               w3m-tab-next-buffer
-               )
     :init
     (progn
-      (evil-leader/set-key
+      (spacemacs/set-leader-keys
         "awo" 'v/w3m-open-site
         "awg" 'w3m-goto-url
         "awG" 'w3m-goto-url-new-session
         "aws" 'w3m-search
         "awS" 'w3m-search-new-session
-        "awX" 'w3m-delete-buffer
-        "awh" 'w3m-next-buffer
-        "awl" 'w3m-tab-next-buffer
+        (evilified-state-evilify-map w3m-mode-map
+          :mode w3m-mode
+          :eval-after-load w3m
+          :bindings
+          "wh" 'w3m-next-buffer
+          "wl" 'w3m-tab-next-buffer)
+          "wx" 'w3m-delete-buffer
         ))))
 
 (with-eval-after-load 'w3m
