@@ -1,5 +1,8 @@
 #+TITLE: W3M contribution layer for Spacemacs
 
+* 中文
+https://github.com/venmos/w3m-layer/blob/master/READMECN.org
+
 * Description
 
 This layer groups together packages to work with W3M.
