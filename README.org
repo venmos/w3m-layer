@@ -89,7 +89,7 @@ Recommended configuration example
 
 #+BEGIN_SRC emacs-lisp
 (defun dotspacemacs/user-config ()
-  (setq w3m-home-page "http://www.google.com")
+  (setq w3m-home-page "https://www.google.com")
   ;; W3M Home Page
   (setq w3m-default-display-inline-images t)
   (setq w3m-default-toggle-inline-images t)
