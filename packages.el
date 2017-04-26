@@ -66,6 +66,9 @@
                w3m-goto-url-new-session
                w3m-search
                w3m-search-new-session
+               w3m-delete-buffer
+               w3m-next-buffer
+               w3m-tab-next-buffer
                )
     :init
     (progn
@@ -75,6 +78,9 @@
         "awG" 'w3m-goto-url-new-session
         "aws" 'w3m-search
         "awS" 'w3m-search-new-session
+        "awX" 'w3m-delete-buffer
+        "awh" 'w3m-next-buffer
+        "awl" 'w3m-tab-next-buffer
         ))))
 
 (with-eval-after-load 'w3m
