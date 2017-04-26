@@ -1,0 +1,100 @@
+#+TITLE: W3M contribution layer for Spacemacs
+
+* 简介
+
+这个 layer 用于在 Spacemacs 中使用 W3M。
+
+所使用的 Emacs 包：
+
+Emacs-w3m http://emacs-w3m.namazu.org
+
+Helm-w3m https://github.com/emacs-helm/helm-w3m
+
+* 安装
+
+** W3M
+*** W3M
+http://w3m.sourceforge.net
+*** OS X
+使用 Homebrew 安装 W3M
+#+BEGIN_SRC sh
+$brew install w3m
+#+END_SRC
+*** Ubuntu/Debian
+#+BEGIN_SRC sh
+$sudo apt install w3m
+#+END_SRC
+
+** Layer
+#+BEGIN_SRC sh
+$git clone https://github.com/venmos/w3m-layer.git ~/.emacs.d/private/w3m
+#+END_SRC
+
+将 w3m layer 加入你的 =~/.spacemacs=
+
+#+BEGIN_SRC emacs-lisp
+(setq-default dotspacemacs-configuration-layers '(
+                                                  w3m
+))
+#+END_SRC
+
+* 快捷键
+** 启动 W3M
+| Key Binding | Description    |
+|-------------+----------------|
+| ~SPC a w o~ | 打开链接       |
+| ~SPC a w f~ | 打开文件       |
+| ~SPC a w s~ | 使用 Google 搜索 |
+| ~SPC a w b~ | 用 helm 打开书签 |
+
+
+** W3M
+| Key Binding | Description            |
+|-------------+------------------------|
+| ~w f~       | 打开文件               |
+| ~w o~       | 打开链接               |
+| ~w O~       | 在新标签中打开链接     |
+| ~w t~       | 打开光标处链接到新标签 |
+| ~w T~       | 打开新的空白标签       |
+| ~w s~       | 使用 Google 搜索       |
+| ~w S~       | 在新标签中搜索         |
+| ~w l~     | 下一个标签页           |
+| ~w h~      | 上一个标签页           |
+| ~w x~       | 关闭标签               |
+| ~w a~       | 添加到收藏夹           |
+| ~w b~       | 用 helm 打开收藏夹     |
+| ~w B~       | 用 w3m 收藏夹          |
+| ~w e~       | 编辑收藏夹             |
+| ~w m~       | 使用外部游览器打开链接 |
+| ~SPC j j~   | evil avy goto char     |
+| ~q~         | 挂起 W3M               |
+| ~Q~         | 退出 W3M               |
+| ~B~         | 返回                   |
+| ~N~         | 前进                   |
+| ~H~         | 打开默认主页           |
+| ~R~         | 刷新                   |
+| ~C-f~       | 向下移动一页           |
+| ~C-b~       | 向上移动一页           |
+|             |                        |
+
+* Config
+** Emacs-w3m
+
+W3M 推荐配置示例
+
+#+BEGIN_SRC emacs-lisp
+(defun dotspacemacs/user-config ()
+  (setq w3m-home-page "http://www.google.com")
+  ;; W3M Home Page
+  (setq w3m-default-display-inline-images t)
+  (setq w3m-default-toggle-inline-images t)
+  ;; W3M default display images
+  (setq w3m-command-arguments '("-cookie" "-F"))
+  (setq w3m-use-cookies t)
+  ;; W3M use cookies
+  (setq browse-url-browser-function 'w3m-browse-url)
+  ;; Browse url function use w3m
+  (setq w3m-view-this-url-new-session-in-background t)
+  ;; W3M view url new session in background
+)
+#+END_SRC

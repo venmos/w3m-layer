@@ -1,0 +1,102 @@
+#+TITLE: W3M contribution layer for Spacemacs
+
+* Description
+
+This layer groups together packages to work with W3M.
+
+It uses the W3M command line tool which allows users
+to browse websites.
+
+use packages:
+
+Emacs-w3m http://emacs-w3m.namazu.org
+
+Helm-w3m https://github.com/emacs-helm/helm-w3m
+
+* Install
+
+** W3M
+*** W3M
+http://w3m.sourceforge.net
+*** OS X
+use homebrew install w3m
+#+BEGIN_SRC sh
+$brew install w3m
+#+END_SRC
+*** Ubuntu/Debian
+#+BEGIN_SRC sh
+$sudo apt install w3m
+#+END_SRC
+
+** Layer
+#+BEGIN_SRC sh
+$git clone https://github.com/venmos/w3m-layer.git ~/.emacs.d/private/w3m
+#+END_SRC
+
+To use this contribution add it to your =~/.spacemacs=
+
+#+BEGIN_SRC emacs-lisp
+(setq-default dotspacemacs-configuration-layers '(
+                                                  w3m
+))
+#+END_SRC
+
+* Key Bindings
+** Boot w3m
+| Key Binding | Description        |
+|-------------+--------------------|
+| ~SPC a w o~ | W3M open url       |
+| ~SPC a w f~ | W3M open file      |
+| ~SPC a w s~ | W3M Search         |
+| ~SPC a w b~ | Helm w3m bookmarks |
+
+
+** W3M
+| Key Binding | Description                   |
+|-------------+-------------------------------|
+| ~w f~       | Open file                     |
+| ~w o~       | Open url                      |
+| ~w O~       | Open url to new tab           |
+| ~w t~       | Open link to new tab          |
+| ~w T~       | Create empty tab              |
+| ~w s~       | Use google seach              |
+| ~w S~       | Use Google search to new tab  |
+| ~w l~       | Next tab                      |
+| ~w h~       | Previous tab                  |
+| ~w x~       | Close tab                     |
+| ~w a~       | Add page to bookmarks         |
+| ~w b~       | Helm w3m bookmarks            |
+| ~w B~       | View bookmarks                |
+| ~w e~       | Edit bookmarks                |
+| ~w m~       | Use default browser open page |
+| ~SPC j j~   | evil avy goto char            |
+| ~q~         | Close w3m                     |
+| ~Q~         | Quit W3M                      |
+| ~B~         | Back                          |
+| ~N~         | Forward                       |
+| ~H~         | Home page                     |
+| ~R~         | Refresh                       |
+| ~C-f~       | Page down                     |
+| ~C-b~       | Page up                       |
+
+* Config
+** Emacs-w3m
+
+Recommended configuration example
+
+#+BEGIN_SRC emacs-lisp
+(defun dotspacemacs/user-config ()
+  (setq w3m-home-page "http://www.google.com")
+  ;; W3M Home Page
+  (setq w3m-default-display-inline-images t)
+  (setq w3m-default-toggle-inline-images t)
+  ;; W3M default display images
+  (setq w3m-command-arguments '("-cookie" "-F"))
+  (setq w3m-use-cookies t)
+  ;; W3M use cookies
+  (setq browse-url-browser-function 'w3m-browse-url)
+  ;; Browse url function use w3m
+  (setq w3m-view-this-url-new-session-in-background t)
+  ;; W3M view url new session in background
+)
+#+END_SRC
