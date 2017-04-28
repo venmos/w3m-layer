@@ -66,7 +66,7 @@ To use this contribution add it to your =~/.spacemacs=
 | ~w S~       | Use Google search to new tab  |
 | ~w l~       | Next tab                      |
 | ~w h~       | Previous tab                  |
-| ~w x~       | Close tab                     |
+| ~w d~      | Close tab                     |
 | ~w a~       | Add page to bookmarks         |
 | ~w b~       | Helm w3m bookmarks            |
 | ~w B~       | View bookmarks                |

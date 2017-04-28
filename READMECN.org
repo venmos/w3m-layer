@@ -60,7 +60,7 @@ $git clone https://github.com/venmos/w3m-layer.git ~/.emacs.d/private/w3m
 | ~w S~       | 在新标签中搜索         |
 | ~w l~     | 下一个标签页           |
 | ~w h~      | 上一个标签页           |
-| ~w x~       | 关闭标签               |
+| ~w d~       | 关闭标签               |
 | ~w a~       | 添加到收藏夹           |
 | ~w b~       | 用 helm 打开收藏夹     |
 | ~w B~       | 用 w3m 收藏夹          |

@@ -64,7 +64,7 @@
           "wS" 'w3m-search-new-session
           "wl" 'w3m-next-buffer
           "wh" 'w3m-previous-buffer
-          "wx" 'w3m-delete-buffer
+          "wd" 'w3m-delete-buffer
           "we" 'w3m-bookmark-edit
           "wa" 'w3m-bookmark-add-current-url
           "wm" 'w3m-view-url-with-external-browser
