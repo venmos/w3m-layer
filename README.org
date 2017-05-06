@@ -74,7 +74,6 @@ To use this contribution add it to your =~/.spacemacs=
 | ~w B~       | View bookmarks                |
 | ~w e~       | Edit bookmarks                |
 | ~w m~       | Use default browser open page |
-| ~SPC j j~   | evil avy goto char            |
 | ~q~         | Close w3m                     |
 | ~Q~         | Quit W3M                      |
 | ~B~         | Back                          |
