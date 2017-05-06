@@ -10,6 +10,12 @@ Emacs-w3m http://emacs-w3m.namazu.org
 
 Helm-w3m https://github.com/emacs-helm/helm-w3m
 
+播放 Youtube 和 Bilibili 需要`mpv`与`Bilidan`
+
+MPV https://mpv.io/
+
+Bilidan https://github.com/m13253/BiliDan
+
 * 安装
 
 ** W3M
