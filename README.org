@@ -58,6 +58,7 @@ To use this contribution add it to your =~/.spacemacs=
 | Key Binding | Description                   |
 |-------------+-------------------------------|
 | ~o~         | ace-link                      |
+| ~w p~       | Use mpv playe Youtube         |
 | ~w y~       | Copy point url                |
 | ~w f~       | Open file                     |
 | ~w o~       | Open url                      |

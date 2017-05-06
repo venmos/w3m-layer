@@ -17,6 +17,19 @@
         helm-w3m
         ))
 
+(defun v/w3m-player-movie ()
+  (interactive)
+  (let ((link (w3m-anchor)))
+    (if (not link)
+        (message "The point is not link.")
+   (cond ((string-match "/\\/www\\.youtube\\.com\\/watch\/?" link)
+          (message (concat "loading from youtube..." link))
+          (call-process "mpv" nil nil nil link))
+         ((string-match "/\\/www\\.bilibili\\.com\\/video\/" link)
+            (message (concat "loading from bilibili..." link))
+            (call-process "bilidan" nil nil nil link)))
+   (message "Sorry, Playback error. please check url."))))
+
 (defun v/w3m-copy-link ()
   (interactive)
   (let ((link (w3m-anchor)))
@@ -64,6 +77,7 @@
           :eval-after-load w3m
           :bindings
           "o" 'ace-link-eww
+          "wp" 'v/w3m-player-movie
           "wy" 'v/w3m-copy-link
           "wf" 'w3m-find-file
           "wo" 'v/w3m-open-url
