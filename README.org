@@ -57,6 +57,8 @@ To use this contribution add it to your =~/.spacemacs=
 ** W3M
 | Key Binding | Description                   |
 |-------------+-------------------------------|
+| ~o~         | ace-link                      |
+| ~w y~       | Copy point url                |
 | ~w f~       | Open file                     |
 | ~w o~       | Open url                      |
 | ~w O~       | Open url to new tab           |
@@ -66,7 +68,7 @@ To use this contribution add it to your =~/.spacemacs=
 | ~w S~       | Use Google search to new tab  |
 | ~w l~       | Next tab                      |
 | ~w h~       | Previous tab                  |
-| ~w d~      | Close tab                     |
+| ~w d~       | Close tab                     |
 | ~w a~       | Add page to bookmarks         |
 | ~w b~       | Helm w3m bookmarks            |
 | ~w B~       | View bookmarks                |

@@ -17,6 +17,14 @@
         helm-w3m
         ))
 
+(defun v/w3m-copy-link ()
+  (interactive)
+  (let ((link (w3m-anchor)))
+    (if (not link)
+        (message "The point is not link.")
+      (kill-new link)
+      (message "Copy \"%s\" to clipboard." link))))
+
 (defun w3m/init-helm-w3m ()
   "Initializes helm-w3m and adds keybindings for its exposed functionalities."
   (use-package helm-w3m
@@ -55,6 +63,8 @@
           :mode w3m-mode
           :eval-after-load w3m
           :bindings
+          "o" 'ace-link-eww
+          "wy" 'v/w3m-copy-link
           "wf" 'w3m-find-file
           "wo" 'v/w3m-open-url
           "wO" 'v/w3m-open-url-new-session

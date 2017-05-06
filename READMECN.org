@@ -51,6 +51,8 @@ $git clone https://github.com/venmos/w3m-layer.git ~/.emacs.d/private/w3m
 ** W3M
 | Key Binding | Description            |
 |-------------+------------------------|
+| ~o~         | Ace-link               |
+| ~w y~       | 拷贝光标处链接         |
 | ~w f~       | 打开文件               |
 | ~w o~       | 打开链接               |
 | ~w O~       | 在新标签中打开链接     |
@@ -58,8 +60,8 @@ $git clone https://github.com/venmos/w3m-layer.git ~/.emacs.d/private/w3m
 | ~w T~       | 打开新的空白标签       |
 | ~w s~       | 使用 Google 搜索       |
 | ~w S~       | 在新标签中搜索         |
-| ~w l~     | 下一个标签页           |
-| ~w h~      | 上一个标签页           |
+| ~w l~       | 下一个标签页           |
+| ~w h~       | 上一个标签页           |
 | ~w d~       | 关闭标签               |
 | ~w a~       | 添加到收藏夹           |
 | ~w b~       | 用 helm 打开收藏夹     |
