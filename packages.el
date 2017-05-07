@@ -76,6 +76,10 @@
           :mode w3m-mode
           :eval-after-load w3m
           :bindings
+          "0" 'evil-digit-argument-or-evil-beginning-of-line
+          "$" 'evil-end-of-line
+          "f" 'evil-find-char
+          "F" 'evil-find-char-backward
           "o" 'ace-link-eww
           "wp" 'v/w3m-player-movie
           "wy" 'v/w3m-copy-link
