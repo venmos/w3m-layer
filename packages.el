@@ -17,6 +17,19 @@
         helm-w3m
         ))
 
+(defun v/w3m-save-buffer-to-file ()
+  (interactive)
+  (let* ((curr (buffer-file-name))
+         (new (read-file-name
+               "Save to file: " nil nil nil
+               (and curr (file-name-nondirectory curr))))
+         (mustbenew (if (and curr (file-equal-p new curr)) 'excl t)))
+    (if (use-region-p)
+        (write-region (region-beginning) (region-end) new nil nil nil mustbenew)
+      (save-restriction
+        (widen)
+        (write-region (point-min) (point-max) new nil nil nil mustbenew)))))
+
 (defun v/w3m-player-movie ()
   (interactive)
   (let ((link (w3m-anchor)))
@@ -92,7 +105,9 @@
           "wS" 'w3m-search-new-session
           "wl" 'w3m-next-buffer
           "wh" 'w3m-previous-buffer
-          "wd" 'w3m-delete-buffer
+          "wx" 'w3m-delete-buffer
+          "wd" 'v/w3m-save-buffer-to-file
+          "wD" 'w3m-save-buffer
           "we" 'w3m-bookmark-edit
           "wa" 'w3m-bookmark-add-current-url
           "wm" 'w3m-view-url-with-external-browser
@@ -109,7 +124,13 @@
   (use-package w3m
     :init
     (progn
-      (setq-default browse-url-browser-function 'w3m-goto-url-new-session)
-      (setq-default w3m-user-agent "Mozilla/5.0 (Linux; U; Android 2.3.3; zh-tw; HTC_Pyramid Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533."))))
+      (setq browse-url-browser-function 'w3m-goto-url-new-session
+            w3m-user-agent "Mozilla/5.0 (Linux; U; Android 2.3.3; zh-tw; HTC_Pyramid Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533."
+            w3m-coding-system 'utf-8
+            w3m-file-coding-system 'utf-8
+            w3m-file-name-coding-system 'utf-8
+            w3m-input-coding-system 'utf-8
+            w3m-output-coding-system 'utf-8
+            w3m-terminal-coding-system 'utf-8))))
 
 ;;; packages.el ends here

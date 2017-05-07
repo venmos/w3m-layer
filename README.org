@@ -69,7 +69,9 @@ To use this contribution add it to your =~/.spacemacs=
 | ~w S~       | Use Google search to new tab  |
 | ~w l~       | Next tab                      |
 | ~w h~       | Previous tab                  |
-| ~w d~       | Close tab                     |
+| ~w d~       | Save buffer to text
+| ~w D~       | Save buffer to html           |
+| ~w x~       | Close tab                     |
 | ~w a~       | Add page to bookmarks         |
 | ~w b~       | Helm w3m bookmarks            |
 | ~w B~       | View bookmarks                |
