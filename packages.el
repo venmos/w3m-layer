@@ -60,19 +60,23 @@
       (spacemacs/set-leader-keys
         "awb" 'helm-w3m-bookmarks))))
 
+(defun v/w3m-open-url-with (fn url)
+  "Open url according to w3m url open function 'fn', and auto handle url prefix"
+  (cond ((string-prefix-p "http://" url) (funcall fn url))
+        ((string-prefix-p "https://" url) (funcall fn url))
+        (t (funcall fn (concat "http://" url)))))
+
 (defun v/w3m-open-url (url)
   "Opens url in new w3m session with 'http://' appended"
   (interactive
    (list (read-string "Enter website address (default: google.com):" nil nil "google.com" nil )))
-  (w3m-goto-url
-   (concat "http://" url)))
+  (v/w3m-open-url-with 'w3m-goto-url url))
 
 (defun v/w3m-open-url-new-session (url)
   "Opens url in new w3m session with 'http://' appended"
   (interactive
    (list (read-string "Enter website address (default: google.com):" nil nil "google.com" nil )))
-  (w3m-goto-url-new-session
-   (concat "http://" url)))
+  (v/w3m-open-url-with 'w3m-goto-url-new-session url))
 
 (defun w3m/init-w3m()
   "Initializes w3m and adds keybindings for its exposed functionalities."
